@@ -1,112 +1,129 @@
 :root {
-  --bg: #0f1419;
-  --surface: #1a2332;
-  --text: #e8eef4;
+  --bg: #0b0f14;
+  --surface: #161c27;
+  --surface-2: #1e2636;
+  --text: #f0f4f8;
   --muted: #8b9bb4;
-  --accent: #3d9eff;
+  --accent: #4aa3ff;
   --danger: #ff5c5c;
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
 body {
-  font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   background: var(--bg);
   color: var(--text);
-  line-height: 1.6;
+  line-height: 1.55;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
 
 .container {
-  max-width: 720px;
+  max-width: 980px;
   margin: 0 auto;
-  padding: 0 1.25rem;
+  padding: 0 1.5rem;
 }
 
 header {
   background: var(--surface);
-  padding: 2rem 0;
+  padding: 1.75rem 0;
   border-bottom: 1px solid #2a3544;
 }
 
-header h1 {
-  font-size: 2.25rem;
+.logo {
+  font-size: 1.85rem;
   font-weight: 700;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.03em;
 }
 
 .tagline {
   color: var(--muted);
-  margin-top: 0.25rem;
+  margin-top: 0.2rem;
+  font-size: 0.95rem;
 }
 
 main {
   flex: 1;
-  padding: 2.5rem 0;
+  padding: 2.5rem 0 3rem;
 }
 
 .disclaimer {
   background: #2a1520;
   border-left: 4px solid var(--danger);
   padding: 1rem 1.25rem;
-  margin-bottom: 2rem;
+  margin-bottom: 2.25rem;
   font-size: 0.95rem;
+  border-radius: 0 8px 8px 0;
 }
 
-.product h2 {
-  font-size: 1.75rem;
-  margin-bottom: 0.5rem;
+.hero-product {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 2.5rem;
+  align-items: start;
+}
+
+.product-info h1 {
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+  letter-spacing: -0.02em;
 }
 
 .code {
   color: var(--accent);
-  font-size: 0.95rem;
+  font-size: 1.05rem;
+  margin-bottom: 1.1rem;
+  line-height: 1.4;
+}
+
+.product-info p {
   margin-bottom: 1rem;
+  color: #d0d7e2;
+}
+
+.product-info ul {
+  padding-left: 1.2rem;
+  color: var(--muted);
+}
+
+.product-info li {
+  margin-bottom: 0.4rem;
 }
 
 .vials {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-  gap: 1.25rem;
-  margin: 1.5rem 0;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
 }
 
 .vials figure {
   text-align: center;
-  background: var(--surface);
-  border-radius: 12px;
-  padding: 0.75rem;
+  background: var(--surface-2);
+  border-radius: 14px;
+  padding: 0.85rem 0.6rem 0.7rem;
   border: 1px solid #2a3544;
 }
 
 .vials img {
   width: 100%;
-  height: 180px;
+  height: 200px;
   object-fit: contain;
   border-radius: 8px;
   background: #0a0e14;
 }
 
 .vials figcaption {
-  margin-top: 0.5rem;
+  margin-top: 0.6rem;
   color: var(--accent);
   font-weight: 600;
-  font-size: 0.95rem;
-}
-
-.product p, .product ul {
-  margin-bottom: 1rem;
-}
-
-.product ul {
-  padding-left: 1.25rem;
-  color: var(--muted);
+  font-size: 1rem;
 }
 
 .notice {
-  margin-top: 2rem;
+  margin-top: 2.5rem;
   padding-top: 1.5rem;
   border-top: 1px solid #2a3544;
   color: var(--muted);
@@ -122,8 +139,23 @@ footer {
   border-top: 1px solid #2a3544;
 }
 
+@media (max-width: 800px) {
+  .hero-product {
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+  }
+  .vials {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .product-info h1 { font-size: 2rem; }
+}
+
 @media (max-width: 600px) {
-  header h1 { font-size: 1.85rem; }
-  .product h2 { font-size: 1.5rem; }
-  .vials { grid-template-columns: 1fr 1fr; }
+  .container { padding: 0 1.1rem; }
+  .vials {
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0.6rem;
+  }
+  .vials img { height: 140px; }
+  .logo { font-size: 1.6rem; }
 }
