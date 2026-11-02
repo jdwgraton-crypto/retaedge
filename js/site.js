@@ -1,6 +1,8 @@
 const CART_KEY = "retaedge-bag";
 const GATE_KEY = "retaedge-gate";
 const GATE_OK = "age-research";
+let LOGO_URI = "images/logo.png?v=2";
+let VIAL_URI = "images/vial.png?v=5";
 const PAGE = document.body.dataset.page || "home";
 const $ = (sel, root = document) => root.querySelector(sel);
 
@@ -48,9 +50,9 @@ function toast(message) {
 
 function vialMarkup(product) {
   return `<div class="vial" data-mg="${product.mg}" aria-hidden="true">
-    <img class="vial-photo" src="images/vial.png?v=5" alt="">
+    <img class="vial-photo" src="${VIAL_URI}" alt="">
     <div class="vial-label">
-      <img class="vial-logo" src="images/logo.png?v=2" alt="">
+      <img class="vial-logo" src="${LOGO_URI}" alt="">
       <strong>Retatrutide</strong>
       <em>${esc(product.size)}</em>
       <small>Research use only</small>
@@ -70,7 +72,7 @@ function renderChrome() {
   $("#chrome-top").innerHTML = `
     <div class="topbar"><p>Retatrutide only <span>·</span> 12 mg to 40 mg <span>·</span> For research purposes only. Not for human or animal use. Not FDA-approved.</p></div>
     <header class="bar">
-      <a class="brand" href="index.html"><img src="images/logo.png?v=2" alt="RetaEdge"></a>
+      <a class="brand" href="index.html"><img src="${LOGO_URI}" alt="RetaEdge"></a>
       <button class="burger" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
       <nav id="site-nav" class="nav">${nav}</nav>
       <button class="bag" type="button" data-open-drawer>
@@ -96,7 +98,7 @@ function showGate() {
     <form class="gate" id="checkin">
       <div class="gate-visual" aria-hidden="true">
         <div>
-          <img class="gate-brand" src="images/logo.png?v=2" alt="">
+          <img class="gate-brand" src="${LOGO_URI}" alt="">
           <p class="gate-tag">Retatrutide only.</p>
         </div>
         <div class="gate-vials">${row}</div>
@@ -279,7 +281,21 @@ function openTicket() {
   });
 }
 
-function boot() {
+async function packImages() {
+  try {
+    const [logo, partA, partB] = await Promise.all([
+      fetch("images/logo.b64"),
+      fetch("images/vial-a.b64"),
+      fetch("images/vial-b.b64")
+    ]);
+    if (!logo.ok || !partA.ok || !partB.ok) return;
+    LOGO_URI = "data:image/png;base64," + (await logo.text()).trim();
+    VIAL_URI = "data:image/png;base64," + (await partA.text()).trim() + (await partB.text()).trim();
+  } catch (err) {}
+}
+
+async function boot() {
+  await packImages();
   renderChrome();
   const grid = $("#grid");
   if (grid) grid.innerHTML = HOUSE.products.map(cardHTML).join("");
