@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>COA — RetaEdge</title>
+  <meta name="description" content="RetaEdge certificate layout for retatrutide, 12 mg to 40 mg. Measured results are not posted.">
+  <meta property="og:title" content="COA — RetaEdge">
+  <meta property="og:description" content="The record for retatrutide, 12 mg to 40 mg. For research purposes only.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://jdwgraton-crypto.github.io/retaedge/coa.html">
+  <meta property="og:image" content="https://jdwgraton-crypto.github.io/retaedge/images/logo.png">
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css?v=20">
+  <style>
+    [hidden] { display: none !important; }
+    html, body, .hero, .shelf, .site-foot, #chrome-top, .topbar, .bar { width: 100%; max-width: none; }
+  </style>
+</head>
+<body data-page="coa">
+  <a class="skip" href="#coa-list">Skip to records</a>
+  <div id="chrome-top"></div>
+  <header class="hero hero-short">
+    <div class="hero-copy">
+      <p class="kicker">COA</p>
+      <h1>The record.</h1>
+      <p class="lede">One peptide, four sizes. Open a size to see the same certificate layout.</p>
+    </div>
+  </header>
+  <section class="shelf coa">
+    <div class="coa-stats">
+      <p><strong>4</strong><span>Sizes listed</span></p>
+      <p><strong>1</strong><span>Peptide</span></p>
+      <p><strong>12–40</strong><span>mg on the shelf</span></p>
+      <p><strong>None</strong><span>Lot results posted</span></p>
+    </div>
+    <form class="coa-find" role="search" onsubmit="return false">
+      <label for="coa-search">Search the shelf</label>
+      <input id="coa-search" type="search" placeholder="Retatrutide, a size, or CAS" autocomplete="off">
+    </form>
+    <div class="coa-filters">
+      <button class="coa-pill is-on" type="button" data-coa-filter="all">All sizes</button>
+      <button class="coa-pill" type="button" data-coa-filter="reta-12">12 mg</button>
+      <button class="coa-pill" type="button" data-coa-filter="reta-24">24 mg</button>
+      <button class="coa-pill" type="button" data-coa-filter="reta-30">30 mg</button>
+      <button class="coa-pill" type="button" data-coa-filter="reta-40">40 mg</button>
+    </div>
+    <div id="coa-list"></div>
+    <p id="coa-empty" class="coa-empty" hidden>Nothing on this shelf matches that search.</p>
+    <article id="coa-record" class="coa-record"></article>
+  </section>
+  <footer class="site-foot">
+    <p>For research purposes only. Not for human or animal use. Not FDA-approved. This page is the record layout. It does not post a purity percentage, a lot, or an outside laboratory result.</p>
+    <button class="text-btn" type="button" id="show-gate">Show the gate again</button>
+  </footer>
+  <div id="chrome-bottom"></div>
+  <script src="js/catalog.js"></script>
+  <script src="js/site.js?v=12"></script>
+</body>
+</html>

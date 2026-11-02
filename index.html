@@ -1,63 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>RetaEdge — Retatrutide Research</title>
-  <meta name="description" content="RetaEdge. Retatrutide research catalog. For research purposes only. Not for human or animal use." />
-  <link rel="stylesheet" href="styles.css" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RetaEdge</title>
+  <meta name="description" content="RetaEdge. Retatrutide only, lined up from 12 mg to 40 mg. For research purposes only.">
+  <meta property="og:title" content="RetaEdge">
+  <meta property="og:description" content="RetaEdge is your new one stop shop for all things retatrutide. For research purposes only. Not for human or animal use.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://jdwgraton-crypto.github.io/retaedge/">
+  <meta property="og:image" content="https://jdwgraton-crypto.github.io/retaedge/images/logo.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css?v=20">
+  <style>
+    [hidden] { display: none !important; }
+    html, body, .hero, .shelf, .steps, .story, .site-foot, #chrome-top, .topbar, .bar, .grid { width: 100%; max-width: none; }
+    .grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    @media (max-width: 980px) { .grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 680px) { .grid { grid-template-columns: 1fr; } }
+  </style>
 </head>
-<body>
-  <header>
-    <div class="container">
-      <div class="logo">RetaEdge</div>
-      <p class="tagline">Retatrutide only · Research catalog</p>
+<body data-page="home">
+  <a class="skip" href="#grid">Skip to vials</a>
+  <div id="chrome-top"></div>
+  <header class="hero">
+    <div class="hero-copy">
+      <p class="kicker">The shelf</p>
+      <h1>Retatrutide only.</h1>
+      <p class="lede">RetaEdge is your new one stop shop for all things retatrutide.</p>
+      <a class="btn" href="#grid">Shop the line</a>
     </div>
+    <ul class="trust">
+      <li><strong>One peptide</strong><span>Retatrutide is the only name here.</span></li>
+      <li><strong>12 to 40 mg</strong><span>Four vials, set small to big.</span></li>
+      <li><strong>Research only</strong><span>Not for human or animal use. Not FDA-approved.</span></li>
+    </ul>
   </header>
-
-  <main class="container">
-    <section class="disclaimer">
-      <strong>FOR RESEARCH PURPOSES ONLY.</strong><br />
-      Not for human or animal use. Not for consumption. Not a drug, supplement, or medical product.
-    </section>
-
-    <section class="hero-product">
-      <div class="product-info">
-        <h1>Retatrutide</h1>
-        <p class="code">LY3437943 · Triple agonist<br>GIP / GLP-1 / Glucagon</p>
-        <p>Lyophilized research reagent supplied as an analytical reference material.</p>
-        <ul>
-          <li>Sizes: 10 mg · 20 mg · 30 mg</li>
-          <li>Certificate of Analysis available upon request for qualified researchers</li>
-          <li>Handle and store according to laboratory standards</li>
-        </ul>
-      </div>
-
-      <div class="vials">
-        <figure>
-          <img src="https://i.ibb.co/PsHm64zZ/aeca6faa-77c6-4585-935f-44f86d94efd7.png" alt="Retatrutide 30mg research vial" />
-          <figcaption>30 mg</figcaption>
-        </figure>
-        <figure>
-          <img src="https://images.unsplash.com/photo-1584305574647-0cc949a2bb9f?auto=format&fit=crop&w=500&q=80" alt="Research peptide vial" />
-          <figcaption>20 mg</figcaption>
-        </figure>
-        <figure>
-          <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=500&q=80" alt="Laboratory research vial" />
-          <figcaption>10 mg</figcaption>
-        </figure>
-      </div>
-    </section>
-
-    <section class="notice">
-      <p>This site is a research catalog. RetaEdge does not sell for human use, does not provide dosing advice, and does not make medical claims.</p>
-    </section>
-  </main>
-
-  <footer>
-    <div class="container">
-      <p>© RetaEdge · Research use only · Not for human or animal use</p>
+  <section class="shelf">
+    <div class="section-head">
+      <p class="kicker">Shop</p>
+      <h2>The line.</h2>
+      <p>We make one thing only, so it is of the highest quality and purity.</p>
     </div>
+    <div class="grid" id="grid"></div>
+  </section>
+  <section class="steps">
+    <div class="section-head">
+      <p class="kicker">On this screen</p>
+      <h2>Three steps. No shipment.</h2>
+    </div>
+    <ol>
+      <li><span>01</span><h3>Pick a size</h3><p>12 mg, 24 mg, 30 mg, or 40 mg.</p></li>
+      <li><span>02</span><h3>Add it to the bag</h3><p>The bag stays in this browser.</p></li>
+      <li><span>03</span><h3>Write a ticket</h3><p>Nothing is charged and nothing ships.</p></li>
+    </ol>
+  </section>
+  <section class="story" id="story">
+    <div>
+      <p class="kicker">About us</p>
+      <h2>One name only.</h2>
+    </div>
+    <div>
+      <p class="lede">RetaEdge is your new one stop shop for all things retatrutide.</p>
+      <p class="lede">We make one thing only, so it is of the highest quality and purity.</p>
+      <p class="lede">The work sits in a small clean room, and retatrutide is the only peptide in it. Nothing is capped until the material has cleared a purity check, and that check is done in the United States.</p>
+      <p class="lede">Retatrutide starts from pharmaceutical-grade amino acids and is made to a set process. Each lot has to show two things: that the sample is clean, and that the molecule is retatrutide. The fill is checked as well, so the vial matches the milligrams on its label.</p>
+      <p class="lede">If a lot cannot show both, it does not wear the name. What does is a short list. 12 mg, 24 mg, 30 mg, and 40 mg. The lot mark on the glass stays with the record for that run.</p>
+      <p class="lede">A bigger order of retatrutide does not get an easier path. The same record follows the vial out of the room. These are research vials. They are not for human or animal use, and they are not FDA-approved.</p>
+      <div class="hero-actions">
+        <a class="btn" href="shop.html">Shop the line</a>
+        <a class="btn btn-ghost" href="compliance.html">Research terms</a>
+      </div>
+    </div>
+  </section>
+  <footer class="site-foot">
+    <p>For research purposes only. Not for human or animal use. Not FDA-approved. RetaEdge is not a 503A pharmacy and not a 503B facility. The ticket stays on this screen.</p>
+    <button class="text-btn" type="button" id="show-gate">Show the gate again</button>
   </footer>
+  <div id="chrome-bottom"></div>
+  <script src="js/catalog.js"></script>
+  <script src="js/site.js?v=12"></script>
 </body>
 </html>
